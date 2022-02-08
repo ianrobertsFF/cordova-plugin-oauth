@@ -147,7 +147,8 @@ public class OAuthPlugin extends CordovaPlugin {
         if (packageName != null) {
            customTabsIntent.intent.setPackage(packageName);
         }
-
+        customTabsIntent.intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        customTabsIntent.intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         customTabsIntent.launchUrl(this.cordova.getActivity(), Uri.parse(url));
     }
 
