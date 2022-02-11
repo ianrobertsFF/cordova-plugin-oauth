@@ -76,7 +76,7 @@ limitations under the License.
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
 
-        <data android:scheme="$URL_SCHEME" android:host="oauth_callback" />
+        <data android:scheme="$URL_SCHEME" android:pathPrefix="/oauth_callback" />
       </intent-filter>
     </config-file>
 
