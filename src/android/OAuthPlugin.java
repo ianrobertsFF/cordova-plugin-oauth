@@ -112,7 +112,7 @@ public class OAuthPlugin extends CordovaPlugin {
 
         final Uri uri = intent.getData();
 
-        if (uri.getHost().equals("oauth_callback")) {
+        //if (uri.getPath().equals("oauth_callback")) {
             LOG.i(TAG, "OAuth called back with parameters.");
 
             try {
@@ -128,7 +128,7 @@ public class OAuthPlugin extends CordovaPlugin {
                 LOG.e(TAG, "JSON Serialization failed");
                 e.printStackTrace();
             }
-        }
+        //}
     }
 
 
