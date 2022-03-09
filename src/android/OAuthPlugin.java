@@ -140,8 +140,8 @@ public class OAuthPlugin extends CordovaPlugin {
     private void startOAuth(String url) {
         String customTabsBrowser = findCustomTabProvider();
 
-        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
-        builder.setShareState(2);
+        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder()
+            .setShareState(CustomTabsIntent.SHARE_STATE_OFF);
         CustomTabsIntent customTabsIntent = builder.build();
 
         String packageName = this.findCustomTabProvider();
