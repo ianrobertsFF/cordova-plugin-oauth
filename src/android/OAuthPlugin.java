@@ -149,7 +149,7 @@ public class OAuthPlugin extends CordovaPlugin {
         }
         customTabsIntent.intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         customTabsIntent.intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        customTabsIntent.intent.setShareState(CustomTabsIntent.SHARE_STATE_OFF);
+        customTabsIntent.intent.setShareState(2);
         customTabsIntent.intent.putExtra("org.chromium.chrome.browser.customtabs.EXTRA_DISABLE_DOWNLOAD_BUTTON", true);
         customTabsIntent.intent.putExtra("org.chromium.chrome.browser.customtabs.EXTRA_DISABLE_STAR_BUTTON", true);
         customTabsIntent.launchUrl(this.cordova.getActivity(), Uri.parse(url));
