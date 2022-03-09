@@ -140,8 +140,7 @@ public class OAuthPlugin extends CordovaPlugin {
     private void startOAuth(String url) {
         String customTabsBrowser = findCustomTabProvider();
 
-        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder()
-            .setShareState(2);
+        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
         CustomTabsIntent customTabsIntent = builder.build();
 
         String packageName = this.findCustomTabProvider();
@@ -150,6 +149,7 @@ public class OAuthPlugin extends CordovaPlugin {
         }
         customTabsIntent.intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         customTabsIntent.intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        customTabsIntent.intent.putExtra("androidx.browser.customtabs.extra.SHARE_STATE", 2);
         customTabsIntent.intent.putExtra("org.chromium.chrome.browser.customtabs.EXTRA_DISABLE_DOWNLOAD_BUTTON", true);
         customTabsIntent.intent.putExtra("org.chromium.chrome.browser.customtabs.EXTRA_DISABLE_STAR_BUTTON", true);
         customTabsIntent.launchUrl(this.cordova.getActivity(), Uri.parse(url));
